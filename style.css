@@ -1,0 +1,430 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    color:white;
+    background:#050014;
+}
+
+/* ========================= */
+/* FUNDO NEBULOSA */
+/* ========================= */
+
+#nebula{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-3;
+}
+
+/* estrelas simples */
+#stars{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+    background:transparent;
+}
+
+/* partículas */
+#particles{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+/* ========================= */
+/* TELAS */
+/* ========================= */
+
+.screen{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.screen.active{
+    display:flex;
+}
+
+/* vidro */
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    padding:25px;
+    max-width:650px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* títulos */
+h1,h2{
+    margin-bottom:15px;
+}
+
+p{
+    line-height:1.6;
+}
+
+/* botões */
+button{
+    margin-top:15px;
+    padding:12px 20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    background:#ff4d8d;
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* ========================= */
+/* DESENHO */
+/* ========================= */
+
+.drawing{
+    width:100%;
+    max-width:300px;
+    border-radius:15px;
+    margin-top:10px;
+}
+/* ========================= */
+/* ENVELOPE 3D REALISTA */
+/* ========================= */
+
+.envelope3d{
+    position:relative;
+    width:220px;
+    height:150px;
+    margin:20px auto;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.envelope3d .shadow{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+    border-radius:10px;
+    transform:translateY(10px);
+    filter:blur(12px);
+}
+
+.envelope3d .back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ff2e7a;
+    border-radius:10px;
+}
+
+.envelope3d .front{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ff4d8d;
+    clip-path:polygon(0 100%, 50% 0, 100% 100%);
+    border-radius:10px;
+}
+
+.envelope3d .flap{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ff77b0;
+    clip-path:polygon(0 0, 50% 60%, 100% 0);
+    transform-origin:top;
+    transition:0.8s;
+}
+
+.envelope3d.open .flap{
+    transform:rotateX(-180deg);
+}
+
+/* ========================= */
+/* CARTA */
+/* ========================= */
+
+#letterScreen{
+    overflow-y:auto;
+}
+
+.envelope3d{
+    position:relative;
+    width:260px;
+    height:170px;
+    margin:20px auto;
+    perspective:1200px;
+    cursor:pointer;
+}
+
+.shadow{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    border-radius:12px;
+    transform:translateY(12px);
+    filter:blur(15px);
+}
+
+.back{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(#ff5f9a,#ff2e7a);
+    border-radius:12px;
+}
+
+.front{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:65%;
+    background:linear-gradient(#ff6aa8,#ff3f88);
+    clip-path:polygon(0 100%,50% 20%,100% 100%);
+}
+
+.flap{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(#ff9bc4,#ff72ad);
+    clip-path:polygon(0 0,50% 58%,100% 0);
+    transform-origin:top;
+    transition:.8s;
+}
+
+.envelope3d.open .flap{
+    transform:rotateX(-170deg);
+}
+
+.letter{
+    position:absolute;
+    width:90%;
+    height:88%;
+    left:5%;
+    top:5%;
+    background:white;
+    border-radius:8px;
+}
+
+.poem{
+    display:none;
+    margin-top:25px;
+    padding:20px;
+    border-radius:15px;
+    background:rgba(255,255,255,.10);
+    white-space:pre-wrap;
+    text-align:left;
+    max-height:45vh;
+    overflow-y:auto;
+}
+
+.poem.show{
+    display:block;
+}
+
+.poem pre{
+    margin:0;
+    font-family:Poppins,sans-serif;
+    color:white;
+}
+
+/* ========================= */
+/* BOLO */
+/* ========================= */
+
+.cake-area{
+    margin-top:20px;
+}
+
+/* bolo */
+.cake{
+    position:relative;
+    width:200px;
+    height:160px;
+    margin:0 auto;
+}
+
+/* camadas */
+.cake-top{
+    position:absolute;
+    width:100%;
+    height:40px;
+    background:#ffe6f0;
+    border-radius:20px 20px 0 0;
+    top:0;
+}
+
+.cake-middle{
+    position:absolute;
+    width:100%;
+    height:60px;
+    background:#ff8fb8;
+    top:40px;
+}
+
+.cake-bottom{
+    position:absolute;
+    width:100%;
+    height:60px;
+    background:#ff4d8d;
+    top:100px;
+    border-radius:0 0 20px 20px;
+}
+
+/* glacê */
+.icing{
+    position:absolute;
+    width:100%;
+    height:25px;
+    background:white;
+    top:35px;
+    border-radius:50px;
+}
+
+/* ========================= */
+/* VELAS */
+/* ========================= */
+
+.candles{
+    position:absolute;
+    top:-30px;
+    width:100%;
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.candle{
+    width:10px;
+    height:35px;
+    background:repeating-linear-gradient(
+        45deg,
+        white,
+        white 4px,
+        #ff4d8d 4px,
+        #ff4d8d 8px
+    );
+    border-radius:4px;
+    position:relative;
+}
+
+.flame{
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    width:10px;
+    height:14px;
+    background:radial-gradient(circle,#fff,#ffb300,#ff4d00);
+    border-radius:50%;
+    animation:flicker 0.2s infinite alternate;
+}
+
+@keyframes flicker{
+    from{transform:translateX(-50%) scale(1);}
+    to{transform:translateX(-50%) scale(1.2);}
+}
+
+/* ========================= */
+/* MENSAGEM DO BOLO */
+/* ========================= */
+
+#birthdayMessage{
+    margin-top:25px;
+    font-size:18px;
+    line-height:1.8;
+    min-height:120px;
+    white-space:pre-wrap;
+    text-align:center;
+}
+
+/* letras animadas */
+.char{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(-20px);
+    animation:drop 0.5s forwards;
+}
+
+@keyframes drop{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.poemBox{max-height:0;opacity:0;overflow:hidden;transition:1s}.poemBox.show{max-height:700px;opacity:1;margin-top:20px}.poemBox pre{white-space:pre-wrap;color:white;text-align:left;background:rgba(255,255,255,.08);padding:20px;border-radius:15px}
+.poemBox{max-height:0;overflow:hidden;opacity:0;transition:1s;margin-top:10px}
+.poemBox.show{max-height:900px;opacity:1}
+#typedPoem{white-space:pre-wrap;line-height:1.8;text-align:left;padding:20px;background:rgba(255,255,255,.08);border-radius:15px}
+.envelope3d{transform-style:preserve-3d}
+.envelope3d .back{background:linear-gradient(135deg,#ff2e7a,#ff76ad);box-shadow:0 15px 30px rgba(0,0,0,.3)}
+.envelope3d .flap{background:linear-gradient(135deg,#ff95c1,#ff5f9a);z-index:5}
+.envelope3d.open .flap{transform:rotateX(-175deg)}
+
+.envelope3d{transform-style:preserve-3d;perspective:1400px}.envelope3d .back,.envelope3d .front{box-shadow:0 15px 30px rgba(0,0,0,.35)}.flap{box-shadow:0 4px 12px rgba(0,0,0,.25)}.poemBox{display:none;margin-top:20px}.poemBox.show{display:block;animation:fade .8s}@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+#letterScreen{overflow-y:auto;padding:30px 20px;}
+#letterScreen .glass{display:flex;flex-direction:column;align-items:center;max-height:none}
+.envelope3d{width:320px;height:200px;perspective:1200px;margin:20px auto;position:relative}
+.back,.front,.flap,.shadow{position:absolute}
+.shadow{inset:0;transform:translateY(12px);filter:blur(15px);background:rgba(0,0,0,.25);border-radius:12px}
+.back{inset:0;background:linear-gradient(#ff5f9a,#ff2e7a);border-radius:12px}
+.front{left:0;right:0;bottom:0;height:65%;background:linear-gradient(#ff6aa8,#ff3f88);clip-path:polygon(0 100%,50% 20%,100% 100%);border-radius:0 0 12px 12px}
+.flap{inset:0;background:linear-gradient(#ff9bc4,#ff72ad);clip-path:polygon(0 0,50% 58%,100% 0);transform-origin:top;transition:.8s}
+.envelope3d.open .flap{transform:rotateX(-170deg)}
+.poemBox{display:none;width:100%;background:#fffdf8;color:#333;padding:22px;border-radius:14px;margin-top:25px;white-space:pre-wrap;line-height:1.8;text-align:left}
+.envelope3d.open+.poemBox{display:block}
+.poemBox pre{white-space:pre-wrap;font-family:Poppins,sans-serif}
+
+.poemBox{display:none;background:#fffdf8;color:#333;padding:20px;border-radius:12px;margin:20px auto;max-width:600px;text-align:left;white-space:pre-wrap}
+.envelope3d.open + .poemBox,.poemBox.show{display:block}
+#letterScreen{overflow-y:auto}
+#letterScreen button{display:block;margin:25px auto 0}
+.envelope3d{width:260px;height:160px}
+
+.poemBox pre{white-space:pre-wrap;font-family:Poppins,sans-serif;}
+.poem{display:none;margin-top:25px;background:rgba(255,255,255,.12);padding:20px;border-radius:15px;text-align:left;white-space:pre-wrap;max-height:45vh;overflow-y:auto}.poem.show{display:block}
+.poem{
+    display:none;
+    margin-top:25px;
+    background:rgba(255,255,255,.12);
+    border-radius:15px;
+    padding:20px;
+    text-align:left;
+    white-space:pre-wrap;
+    max-height:45vh;
+    overflow-y:auto;
+}
+
+.poem.show{
+    display:block;
+}
+#drawing .glass{display:flex;flex-direction:column;align-items:center;}
+.drawing{display:block;width:100%;max-width:300px;margin:15px auto;border-radius:15px;}
+#drawing button{display:block;margin:20px auto 0;}

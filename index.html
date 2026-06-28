@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>for you ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- FUNDO -->
+<!-- ========================= -->
+
+<canvas id="nebula"></canvas>
+
+<div id="stars"></div>
+
+<div id="particles"></div>
+
+<!-- ========================= -->
+<!-- TELA 1 -->
+<!-- ========================= -->
+
+<section class="screen active" id="intro">
+
+<div class="glass">
+
+<h1>
+
+Feliz aniversario ❤️
+
+</h1>
+
+<p>
+
+Preparei uma pequena surpresa para a minha princesa...
+
+</p>
+
+<button onclick="nextScreen()">
+
+Começar
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TELA 2 -->
+<!-- ========================= -->
+
+<section class="screen" id="history">
+
+<div class="glass">
+
+<h2>
+
+Um pouco da nossa história
+
+</h2>
+
+<p>
+
+Nós nos conhecemos no dia <b>04/01/25</b>.
+
+</p>
+
+<p>
+
+Começamos a conversar a partir do dia <b>06/01/25</b>.
+
+</p>
+
+<p>
+
+E começamos a namorar no dia <b>02/12/25 às 22:38</b>.
+
+</p>
+
+<p>
+
+No puedo recordar nuestro primer "te amo",
+porque incluso antes de conocernos ya nos lo decíamos el uno al otro.
+Era como si nuestro destino ya hubiera sido trazado para nosotros,
+como si el universo hubiera decidido que terminaríamos juntos
+
+
+</p>
+
+<button onclick="nextScreen()">
+
+Continuar
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TELA 3 -->
+<!-- ========================= -->
+
+<section class="screen" id="drawing">
+
+<div class="glass">
+
+<h2>
+
+Um breve vislumbre do nosso futuro:
+
+</h2>
+
+<img
+
+src="desenho.png"
+
+class="drawing"
+
+alt="Desenho">
+
+<button onclick="nextScreen()">
+
+Continuar
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- TELA 4 -->
+<!-- ========================= -->
+
+<section class="screen" id="letterScreen">
+
+    <div class="glass">
+
+        <h2>Uma carta para você</h2>
+
+
+
+        <div class="envelope3d" id="envelope">
+
+            <div class="shadow"></div>
+
+            <div class="back"></div>
+
+            <div class="letter"></div>
+
+            <div class="front"></div>
+
+            <div class="flap"></div>
+
+        </div>
+
+        <div class="poem" id="poem">
+
+<pre>
+Para el amor de mi vida, te escribo despacio,
+porque hay cosas en el pecho que no tienen espacio fácil de explicar.
+Busco palabras que te puedan alcanzar,
+pero ninguna parece suficiente para poderte nombrar o mostrar.
+
+No recuerdo el momento del primer “te amo” dicho,
+quizás eso sea solo un detalle perdido.
+Porque lo que siento por vos ya nació escrito,
+antes incluso de que nuestro encuentro hubiera existido.
+
+Aunque estés lejos, vivís en mi pensar,
+en mi despertar, en mi soñar, en mi caminar.
+Y todo el día te anda buscando sin parar,
+como si el mundo supiera bien dónde estás.
+
+Y mi mayor deseo, sincero y entero,
+es simple como el viento de un día verdadero:
+mirarte a los ojos, sin nada entre los dos,
+y tomar tu mano…
+y no soltarla jamás, mi amor.
+</pre>
+
+        </div>
+
+        <button onclick="nextScreen()">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ========================= -->
+<!-- TELA 5 -->
+<!-- ========================= -->
+
+<section class="screen" id="cakeScreen">
+
+    <div class="glass">
+
+        <h2 style="margin-bottom:40px;">Feliz Aniversário, meu amor </h2>
+
+        <div class="cake-area">
+
+            <div class="cake" id="cake">
+
+                <!-- Velas -->
+
+                <div class="candles">
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                </div>
+
+                <!-- Bolo -->
+
+                <div class="cake-top"></div>
+
+                <div class="cake-middle"></div>
+
+                <div class="cake-bottom"></div>
+
+                <div class="icing"></div>
+
+            </div>
+
+            <button id="blowButton">
+
+                Apague as velas, meu bem
+
+            </button>
+
+        </div>
+
+        <!-- Mensagem -->
+
+        <div id="birthdayMessage">
+
+        </div>
+
+        <button onclick="nextScreen()">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TELA FINAL -->
+<!-- ========================= -->
+
+<section class="screen" id="final">
+
+    <div class="glass finalGlass">
+
+        <h1>
+
+            ❤️
+
+        </h1>
+
+        <h2>
+
+            Obrigado por existir
+
+        </h2>
+
+        <p>
+
+            Meu amor por você nunca diminui, apenas aumenta a cada dia e nunca vai diminuir, porque você é a paixão da minha vida.
+
+        </p>
+
+        <p class="signature">
+
+            Eu te amo muito ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
